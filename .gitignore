@@ -1,0 +1,8 @@
+.env
+/vendor
+/node_modules
+/public/build
+/storage/framework/*
+/storage/logs/*
+/storage/*.key
+/bootstrap/cache/*.php

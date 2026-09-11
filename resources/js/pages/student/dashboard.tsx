@@ -1,0 +1,7 @@
+import { Head, Link, router } from '@inertiajs/react';
+export default function Dashboard({student,availableSubjects}:any){
+ return <><Head title="Student Dashboard"/><div className="p-8 max-w-6xl mx-auto"><div className="flex justify-between items-center mb-8"><div><h1 className="text-3xl font-bold">Student Dashboard</h1><p className="text-slate-500">Welcome, {student.user.name}</p></div><button onClick={()=>router.post('/logout')} className="border rounded-lg px-4 py-2">Logout</button></div>
+ <div className="grid md:grid-cols-3 gap-5 mb-8"><div className="bg-white rounded-2xl p-6 shadow"><p className="text-slate-500">Student Number</p><p className="text-xl font-bold">{student.student_number}</p></div><div className="bg-white rounded-2xl p-6 shadow"><p className="text-slate-500">Applied Subjects</p><p className="text-xl font-bold">{student.subjects.length}</p></div><div className="bg-white rounded-2xl p-6 shadow"><p className="text-slate-500">Available Subjects</p><p className="text-xl font-bold">{availableSubjects.length}</p></div></div>
+ <div className="flex gap-3 mb-6"><Link href="/student/subjects" className="bg-slate-900 text-white px-4 py-2 rounded-lg">Browse Subjects</Link><Link href="/student/applications" className="border px-4 py-2 rounded-lg">My Applications</Link></div>
+ </div></>;
+}
