@@ -115,11 +115,6 @@ export default function Login() {
                                 {processing ? "Signing in..." : "Login"}
                             </button>
 
-                            <div className="demo-login">
-                                <strong>Demo Admin Account</strong>
-                                <br />
-                                admin@school.com / password123
-                            </div>
                         </form>
                     </div>
 

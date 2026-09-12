@@ -9,7 +9,13 @@ use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\ApplicationController;
 
-Route::get('/', fn()=>redirect()->route('dashboard'));
+Route::get('/', function () {
+    if (auth()->check()) {
+        return redirect()->route('dashboard');
+    }
+
+    return redirect()->route('login');
+});
 
 Route::middleware('guest')->group(function () {
     Route::get('/login',[AuthController::class,'showLogin'])->name('login');
